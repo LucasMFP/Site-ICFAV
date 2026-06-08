@@ -6,6 +6,11 @@ body,html {
     background-repeat: no-repeat;
     background-position: center;
     color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 @font-face {
@@ -67,18 +72,25 @@ body,html {
     margin-top: 10vh;
 }
 
-h1{
+@keyframes entrar {
+    0%   { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}
+
+h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'TheSeasons_light';
     font-weight: normal;
     font-size: 141px;
-
     margin-bottom: 0%;
+
+    opacity: 0;
+    animation: entrar 1s ease-out 0.3s forwards;
 }
 
-h2{
+h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,4 +99,325 @@ h2{
     color: #8e6431;
     font-size: 40.2px;
     margin-top: 0%;
+
+    opacity: 0;
+    animation: entrar 1s ease-out 1s forwards;
+}
+
+#btn_login {
+    background: transparent;
+    border: 1px solid #8e6431;
+    color: #8e6431;
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 12px 40px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    opacity: 0;
+    animation: entrar 1s ease-out 1.8s forwards;
+}
+
+#btn_login:hover {
+    background: #8e6431;
+    color: #fff;
+}
+
+#login_container{
+    display: none;
+    width: 510px;
+    height: 418px;
+
+    background-color: #02245f;
+    border: 1px solid #8e6431;
+    border-radius: 13px;
+}
+
+h3{
+    font-family: 'TheSeasons_light', sans-serif bold;
+    font-weight: normal;
+    color: #8e6431;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form input{
+    width: 419px;
+    height: 42px;
+
+    border: 1px solid #8e6431;
+    border-radius: 50px;
+    background-color: #02245f;
+}
+
+.campo_input{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 419px;
+
+    position: relative; /* referência */
+    width: 419px;
+    margin-bottom: 50px;
+}
+
+.input_title{
+    width: 90px;
+    height: 30px;
+    position: relative;
+
+    border: 1px solid #8e6431;
+    border-radius: 50px;
+    background-color: #02245f;
+
+    font-family: 'Anton', sans-serif;
+    color: #8e6431;
+    font-size: 14px;
+
+    position: absolute; /* sai do fluxo */
+    top: -17px;        /* sobe metade da altura dele */
+    left: 16px;        /* distância da borda esquerda */
+    transition: transform 0.5s ease;
+}
+
+.input_title p {
+    margin: 0;
+    line-height: 34px;
+}
+
+.input_title.ativo {
+    transform: translateY(-20px);
+}
+
+input {
+    text-align: center;
+    color: #fff;
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #ffffff37;
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+input:hover {
+    border-color: #ffffff37;
+}
+
+input:focus {
+    border-color: #8e6431;
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #02245f inset !important; 
+    -webkit-text-fill-color: #fff !important; 
+    border: 1px solid #8e6431 !important;
+}
+
+/* 2. O HOVER CORRIGIDO (Usamos box-shadow duplo para cobrir a teimosia do navegador) */
+input:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 30px #02245f inset !important;
+    -webkit-text-fill-color: #fff !important;
+    
+    /* Remove a borda branca sólida e aplica a cor idêntica ao input de e-mail */
+    border: 1px solid #ffffff37 !important; 
+}
+
+/* 3. Estado de Foco (Quando você clica no campo de senha preenchido) */
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #02245f inset !important;
+    -webkit-text-fill-color: #fff !important;
+    border: 1px solid #ffffff37 !important;
+    outline: none !important;
+}
+
+
+#login_form{
+    display: none;
+    margin-top: 15px;
+}
+
+#btn_entrar {
+    background: transparent;
+    border: 1px solid #8e6431;
+    color: #8e6431;
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    margin-top: -30px;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+#btn_entrar:hover {
+    background: #8e6431;
+    color: #fff;
+}
+
+.btn_link {
+    color: #8e6431;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.btn_link:hover {
+    color: #fff;
+}
+
+#cadastrar_form{
+    display: none;
+    margin-top: -5px;
+}
+
+#campo_input{
+    margin-top: -20px;
+}
+
+#campo_input_2{
+    margin-top: -11px;
+}
+
+#campo_input_3{
+    margin-top: -11px;
+}
+
+#btn_cadastrar {
+    background: transparent;
+    border: 1px solid #8e6431;
+    color: #8e6431;
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    margin-top: -30px;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+#btn_cadastrar:hover {
+    background: #8e6431;
+    color: #fff;
+}
+
+.btn_link {
+    color: #8e6431;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+#recuperar_form{
+    display: none;
+    margin-top: 20px;
+}
+
+#campo_input_4{
+    margin-top: 40px;
+}
+
+#btn_recuperar {
+    background: transparent;
+    border: 1px solid #8e6431;
+    color: #8e6431;
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+#btn_recuperar:hover {
+    background: #8e6431;
+    color: #fff;
+}
+
+.btn_link {
+    color: #8e6431;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.btn_link:hover {
+    color: #fff;
+}
+
+/*animação dos H1 e H2 e aparecimento do form*/
+#tittles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    /* Adiciona transição suave para quando a margem e o topo mudarem */
+    transition: margin-top 0.8s ease, transform 0.8s ease; 
+}
+
+h1, h2 {
+    /* Adiciona o transform na transição junto com a opacidade da animação inicial */
+    transition: font-size 0.8s ease, transform 0.8s ease, margin 0.8s ease;
+}
+
+/* Quando o botão for clicado, o body receberá a classe '.modo-login' */
+/* Isso fará os títulos subirem e diminuírem de tamanho para dar espaço ao form */
+body.modo-login #tittles {
+    margin-top: 2vh; /* Diminui a margem do topo */
+}
+
+body.modo-login h1 {
+    font-size: 80px; /* Diminui o tamanho do H1 para não ocupar a tela toda */
+    margin-top: 10px;
+}
+
+body.modo-login h2 {
+    font-size: 30px; /* Diminui o H2 proporcionalmente */
+}
+
+body.modo-login #btn_login {
+    /* Esconde o botão "Entrar" inicial de forma suave */
+    opacity: 0 !important;
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: 0;
+    height: 0;
+    padding: 0;
 }

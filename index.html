@@ -18,6 +18,91 @@
     <div id="tittles">
         <h1>ICFAVestudo</h1>
         <h2>Seu site de estudo bíblico</h2>
+        <button id="btn_login" onclick="mostrarForms()">Entrar</button>
+    </div>
+
+    <div id="login_container">
+
+        <form id="login_form">
+            <h3>Login</h3>
+
+            <div class="campo_input">
+            <div class="input_title">
+                <p>E-mail</p>
+            </div>
+            <input 
+                type="email" 
+                id="email_login" 
+                placeholder="Ex: icfavestudo@gmail.com" 
+                required
+            >
+            </div>
+
+            <div class="campo_input">
+                <div class="input_title">
+                    <p>Senha</p>
+                </div>
+                <input 
+                    type="password" 
+                    id="password_login" 
+                    placeholder="Digite aqui sua senha" 
+                    minlength="7" 
+                    required
+                >
+            </div>
+
+            <button type="submit" id="btn_entrar" onclick="login()">Entrar</button>
+
+            <button type="submit" class="btn_link" onclick="recuperarSenha()">Esqueci minha senha</button>
+            <button type="submit" class="btn_link" onclick="cadastrar()">Não tem cadastro? Cadastre-se</button>
+            <button type="submit" class="btn_link" onclick="entrarSemCadastro()">Entrar sem cadastro</button>
+        </form>
+
+        <form id="cadastrar_form">
+            <h3>Cadastre-se</h3>
+
+            <div id="campo_input" class="campo_input">
+                <div class="input_title">
+                    <p>E-mail</p>
+                </div>
+                <input type="email" id="email_cadastrar" placeholder="Email" required>
+            </div>
+
+            <div id="campo_input_2" class="campo_input">
+                <div class="input_title">
+                    <p>Senha</p>
+                </div>
+                <input type="password" id="password_cadastrar" placeholder="Digite sua Senha" required>
+            </div>
+
+            <div id="campo_input_3" class="campo_input">
+                <div class="input_title">
+                    <p>Senha</p>
+                </div>
+                <input type="password" id="password_cadastrar_confirm" placeholder="Confirme sua Senha" required>
+            </div>
+
+            <button type="submit" id="btn_cadastrar" onclick="cadastrarUsuário(event)">Cadastrar</button>
+
+            <button type="submit" class="btn_link" onclick="recuperarSenha()">Esqueci minha senha</button>
+            <button type="submit" class="btn_link" onclick="irParaLogin()">Ir para login</button>
+        </form>
+
+        <form id="recuperar_form">
+            <h3>Recuperar Senha</h3>
+            <div id="campo_input_4" class="campo_input">
+                <div class="input_title">
+                    <p>E-mail</p>
+                </div>
+                <input type="email" id="email_recuperar" placeholder="Email" required>
+            </div>
+
+            <button type="submit" id="btn_recuperar" onclick="enviarEmail(event)">Recuperar</button>
+
+            <button type="submit" class="btn_link" onclick="irParaLogin()">Ir para login</button>
+            <button type="submit" class="btn_link" onclick="cadastrar()">Cadastre-se</button>
+        </form>
+
     </div>
     
     <script src="./script_inicio/script.js"></script>
